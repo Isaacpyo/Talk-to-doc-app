@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./img/Talk-to-doctor-logo.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/c74a903629.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="./fonts/flaticon-3/flaticon3.css" />
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Talk to a Doctor</title>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Navbar-->
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white"
+      >
+        <div class="container-fluid">
+          <!-- logo  -->
+          <div class="d-flex align-items-center">
+            <a href="index.html" class="navbar-brand py-1"
+              ><img
+                src="./img/Talk-to-doctor-logo2.png"
+                height="40px"
+                alt="Talk to a  Doctor logo"
+                class="img-logo"
+            /></a>
+            <form action="#" id="search" class="form-inline d-none d-sm-flex">
+              <div
+                class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3"
+              >
+                <label for="search_search" class="label-absolute"
+                  ><i class="fa fa-search"></i
+                  ><span class="sr-only">What are you looking for?</span></label
+                >
+                <input
+                  id="search_search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
+                />
+                <button type="reset" class="btn btn-reset btn-sm">
+                  <i class="fa-times fas"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <button
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler navbar-toggler-right"
+          >
+            <i class="fa fa-bars"></i>
+          </button>
+          <!-- Navbar Collapse -->
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+            <form
+              action="#"
+              id="searchcollapsed"
+              class="form-inline mt-4 mb-2 d-sm-none"
+            >
+              <div
+                class="input-label-absolute input-label-absolute-left input-reset w-100"
+              >
+                <label for="searchcollapsed_search" class="label-absolute"
+                  ><i class="fa fa-search"></i
+                  ><span class="sr-only">What are you looking for?</span></label
+                >
+                <input
+                  id="searchcollapsed_search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
+                />
+                <button type="reset" class="btn btn-reset btn-sm">
+                  <i class="fa-times fas"> </i>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a
+                  id="homeDropdownMenuLink"
+                  href="index.html"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="nav-link dropdown-toggle active"
+                >
+                  Why Talk to a Doctor?</a
+                >
+                <div
+                  aria-labelledby="homeDropdownMenuLink"
+                  class="dropdown-menu"
+                  style="display: none; transform: translateY(30px);"
+                >
+                  <a href="index.html" class="dropdown-item">Rooms</a
+                  ><a href="index-2.html" class="dropdown-item">Restaurants</a
+                  ><a href="index-3.html" class="dropdown-item">Travel</a
+                  ><a href="index-4.html" class="dropdown-item"
+                    >Real Estate
+                    <span class="badge badge-info-light ml-1 mt-n1"
+                      >New</span
+                    ></a
+                  >
+                </div>
+              </li>
+              <!-- Megamenu-->
+
+              <!-- /Megamenu end-->
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">How it works</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="contact.html" class="nav-link">Who we serve</a>
+              </li> -->
+              <!-- <li class="nav-item dropdown">
+                <a
+                  id="docsDropdownMenuLink"
+                  href="index.html"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="nav-link dropdown-toggle"
+                >
+                  Docs</a
+                >
+                <div
+                  aria-labelledby="docsDropdownMenuLink"
+                  class="dropdown-menu dropdown-menu-right"
+                  style="display: none; transform: translateY(30px);"
+                >
+                  <h6 class="dropdown-header font-weight-normal">
+                    Documentation
+                  </h6>
+                  <a href="docs/docs-introduction.html" class="dropdown-item"
+                    >Introduction </a
+                  ><a
+                    href="docs/docs-directory-structure.html"
+                    class="dropdown-item"
+                    >Directory structure </a
+                  ><a href="docs/docs-gulp.html" class="dropdown-item">Gulp </a
+                  ><a
+                    href="docs/docs-customizing-css.html"
+                    class="dropdown-item"
+                    >Customizing CSS </a
+                  ><a href="docs/docs-credits.html" class="dropdown-item"
+                    >Credits </a
+                  ><a href="docs/docs-changelog.html" class="dropdown-item"
+                    >Changelog
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <h6 class="dropdown-header font-weight-normal">Components</h6>
+                  <a href="docs/components-bootstrap.html" class="dropdown-item"
+                    >Bootstrap </a
+                  ><a
+                    href="docs/components-directory.html"
+                    class="dropdown-item"
+                    >Theme
+                  </a>
+                </div>
+              </li> -->
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">Sign in/Sign up</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="signup.html" class="nav-link">Sign up</a>
+              </li> -->
+              <li
+                class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block"
+              >
+                <a href="user-add-0.html" class="btn btn-primary"
+                  >Find a Doctor</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- /Navbar -->
+    </header>
+
+
+    <!-- how it works -->
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center border-primary">
+            <h2 class="font-weight-light text-primary">How It Works</h2>
+            <p class="color-black-opacity-5">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+            <div class="how-it-work-step">
+              <div class="img-wrap">
+                <img
+                  src="images/step-1.svg"
+                  alt="Free website template by Free-Template.co"
+                  class="img-fluid"
+                />
+              </div>
+              <span class="number">1</span>
+              <h3>Create account</h3>
+              <p>
+                Signing up is easy and it takes less than a minute on your
+                phone, tablet or computer. To sign up as a Patient, Click the
+                Button Below.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+            <div class="how-it-work-step">
+              <div class="img-wrap">
+                <img
+                  src="images/step-2.svg"
+                  alt="Free website template by Free-Template.co"
+                  class="img-fluid"
+                />
+              </div>
+              <span class="number">2</span>
+              <h3>Find doctor</h3>
+              <p>
+                After filling your account profile, you can start finding the
+                right doctor to talk to about the symptoms you are having from
+                our pool of certified professionals.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+            <div class="how-it-work-step">
+              <div class="img-wrap">
+                <img
+                  src="images/step-3.svg"
+                  alt="Free website template by Free-Template.co"
+                  class="img-fluid"
+                />
+              </div>
+              <span class="number">3</span>
+              <h3>Start talking</h3>
+              <p>
+                Start talking Following the creation of your talktomedoc account
+                and finding the right doctor to talk to. Choose one of numerous
+                channels available to start talking to your doctor
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- let get started -->
+    <div class="py-5 bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mr-auto mb-4 mb-lg-0">
+            <h2 class="mb-3 mt-0 text-white">
+              Let's get started. Create your account.
+            </h2>
+            <p class="mb-0 text-white">
+              </p>
+          </div>
+          <div class="col-lg-4">
+            <p class="mb-0">
+              <a
+                href="signup.html"
+                class="btn btn-outline-white text-white btn-md px-5 font-weight-bold btn-md-block"
+                >Sign Up</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Area Starts -->
+    <section class="download-area section-padding">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="download-text">
+              <h2>Download the app your mobile today</h2>
+              <p class="py-3">
+                Smart health on the go
+              </p>
+              <p>
+                Its affordable, secured, fast and available on your favourite
+                app Stores
+              </p>
+              <div
+                class="download-button d-sm-flex2 flex-row justify-content-start"
+              >
+                <div class="mb-3 mb-sm-0 flex-row d-flex android-adjust">
+                  <!-- <i class="fa fa-apple" aria-hidden="true"></i> -->
+                  <a href="#">
+                    <img
+                      src="./img/en_badge_web_generic.png"
+                      height="80px"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="mb-3 mb-sm-0 flex-row d-flex ios-adjust">
+                  <!-- <i class="fa fa-android" aria-hidden="true"></i> -->
+                  <a href="#">
+                    <img src="./img/appstore.png" height="70px" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 pr-0">
+            <div class="download-img justify-content-start">
+              <img src="./img/mobile.png" height="350px" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Download Area End -->
+
+    <!-- Footer Area Starts -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="mb-5">
+              <h5 class="footer-heading mb-4">About</h5>
+              <p style="color: rgb(189, 189, 189);">
+              <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">FAQs</a></li>
+                </ul></p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h5 class="footer-heading mb-4">For Patients & Providers</h5>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled" style="color: rgb(189, 189, 189);">
+                  <li><a href="#">Find a Doctor</a></li>
+                  <li><a href="#">Sign Up Or Log In</a></li>
+                  <li><a href="#">Right Diagnosis</a></li>
+                  <li><a href="#"> Quality & Transparency</a></li>
+                  <li><a href="#">Health Guides</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">Update Your Free Profile</a></li>
+                  <li><a href="#">Promote Your Practice</a></li>
+                  <li><a href="#">Log In to Your Account</a></li>
+                  <li><a href="#">Help Center</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <h5 class="footer-heading mb-4">Subscribe Newsletter</h5>
+            <p style="color: rgb(189, 189, 189);">
+              Sign up to our Newsletter to keep up to date with us.
+            </p>
+            <form action="#" method="post">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-transparent"
+                  placeholder="Enter Email"
+                  aria-label="Enter Email"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-primary text-white"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Send
+                  </button>
+                </div>
+
+                <!-- <p>
+                  <br>
+                  <h6 style="font-size: 13px;">
+                  Your privacy is important to us. Submission of this form is
+                  subject to Healthgrades User Agreement and Privacy Policy
+                </h6>
+                </p> -->
+              </div>
+            </form>
+          </div>
+
+          <div class="col-lg-3 mb-5 mb-lg-0">
+            <h5 class="footer-heading mb-4">Follow Us</h5>
+
+            <div class="iconss">
+              <a href="#" class="pl-0 pr-3"
+                ><span class="icon-facebook"></span
+              ></a>
+              <a href="#" class="pl-3 pr-3"
+                ><span class="icon-twitter"></span
+              ></a>
+              <a href="#" class="pl-3 pr-3"
+                ><span class="icon-instagram"></span
+              ></a>
+              <a href="#" class="pl-3 pr-3"
+                ><span class="icon-linkedin"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer Area End -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script>
+            var typed = new Typed('.typed-words', {
+            strings: ["Doctors"," Hospitals"," Health-care Providers"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+            });
+    </script>
+
+    <script src="./js/jquery.nice-select.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
