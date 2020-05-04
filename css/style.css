@@ -792,116 +792,6 @@ label {
   font-size: 1.2rem;
 }
 
-/*---------------------
-  Testimonial Section
------------------------*/
-
-.testimonial-section {
-  margin: 0 52px;
-}
-
-.testimonial-section .bg-img {
-  margin-top: -30px;
-}
-
-.testimonial-section .bg-img img {
-  width: 100%;
-}
-
-.testimonial-item .owl-nav button[type="button"] {
-  color: #2c2c2c;
-  display: inline-block;
-  font-size: 25px;
-  height: 51px;
-  width: 51px;
-  background: #f1f2f6;
-  position: absolute;
-  left: -155px;
-  top: 50%;
-  -webkit-transform: translateY(-25.5px);
-  transform: translateY(-25.5px);
-}
-
-.testimonial-item .owl-nav button[type="button"].owl-next {
-  left: auto;
-  right: -155px;
-}
-
-.single-testimonial-item {
-  text-align: center;
-}
-
-.single-testimonial-item img {
-  display: inline-block;
-  height: 101px;
-  width: 101px !important;
-  border-radius: 50%;
-  margin-bottom: 25px;
-}
-
-.single-testimonial-item p {
-  color: #787878;
-  font-size: 20px;
-  font-style: italic;
-  line-height: 36px;
-  letter-spacing: 0.2px;
-  margin-bottom: 30px;
-}
-
-.single-testimonial-item h4 {
-  color: #242424;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 34px;
-}
-
-.single-testimonial-item span {
-  color: #787878;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.owl-carousel .owl-item img {
-  display: inline-block;
-}
-
-.testimonial-item .owl-nav button[type="button"].owl-next {
-  left: auto;
-  right: -155px;
-}
-.testimonial-item .owl-nav button[type="button"] {
-  color: #2c2c2c;
-  display: inline-block;
-  font-size: 25px;
-  height: 51px;
-  width: 51px;
-  background: #f1f2f6;
-  position: absolute;
-  left: -155px;
-  top: 50%;
-  -webkit-transform: translateY(-25.5px);
-  transform: translateY(-25.5px);
-}
-
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel button.owl-dot {
-  background: 0 0;
-  color: inherit;
-  border: none;
-  padding: 0 !important;
-  font: inherit;
-}
-.owl-carousel .owl-dot,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-nav .owl-prev {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 /* slide */
 
 [class^="icon-"],
@@ -919,6 +809,7 @@ label {
 
 .download-area {
   background: #ebe9e9;
+  margin-top: -380px;
 }
 .container-fluid,
 .container-sm,
@@ -1026,6 +917,47 @@ a {
 .section-padding {
   padding: 100px 0;
 }
+
+.testing {
+  background: black;
+  bottom: 0;
+  top: 0;
+}
+
+.testimo {
+  background-color: rgb(202, 202, 202);
+  padding-top: 55px;
+  overflow: hidden;
+}
+
+/* [data-aos][data-aos][data-aos-delay="100"].aos-animate,
+body[data-aos-delay="100"] [data-aos].aos-animate {
+  transition-delay: 0.1s;
+}
+[data-aos^="fade"][data-aos^="fade"].aos-animate {
+  opacity: 1;
+  transform: translate(0);
+}
+[data-aos][data-aos][data-aos-delay="100"],
+body[data-aos-delay="100"] [data-aos] {
+  transition-delay: 0;
+}
+[data-aos][data-aos][data-aos-duration="800"],
+body[data-aos-duration="800"] [data-aos] {
+  transition-duration: 0.8s;
+}
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+[data-aos="fade-up"] {
+  transform: translateY(100px);
+}
+.mb-5,
+.my-5 {
+  margin-bottom: 3rem !important;
+} */
+/* blog */
 
 @media (max-width: 1304px) {
   .d-xl-inline-block {
@@ -1142,6 +1074,15 @@ a {
   .d-sm-flex2 {
     display: flex !important;
   }
+  .img-fluid {
+    max-width: 70%;
+    height: auto;
+    align-items: center;
+  }
+  .bg-white2 {
+    background-color: #fff !important;
+    max-width: 70%;
+  }
 }
 
 @media (max-width: 590px) {
@@ -1155,6 +1096,16 @@ a {
     align-content: center;
     align-self: center;
     justify-content: center !important;
+  }
+  .how-it-work-step img {
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0rem;
+  }
+
+  .how-it-work-step .img-wrap {
+    height: 180px;
   }
   .caption {
     font-size: 10px;
@@ -1186,6 +1137,9 @@ a {
   .why-us-image img {
     padding-top: 10px;
   }
+  .carousel-control-next {
+    margin-right: 25px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1213,6 +1167,13 @@ a {
     align-self: center;
     padding-top: 5px;
     justify-content: center !important;
+  }
+  .carousel-indicators {
+    margin-top: 180px;
+  }
+  .download-area {
+    background: #ebe9e9;
+    margin-top: -350px;
   }
 }
 
