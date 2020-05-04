@@ -130,15 +130,15 @@
     <!-- LOGIN MODAL -->
   <div id="modal-login" class="modal">
     <div class="modal-content">
-      <a href="" class="navbar-brand py-1"
-              ><img
-                src="./img/Talk-to-doctor-logo2.png"
-                height="40px"
-                alt="Talk to a  Doctor logo"
-                class="img-logo"
-            /></a>
-      <h4>Login</h4><br />
-      <button onclick="googleSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">Sign up with Google</button>
+      
+      <h5>Login</h5><br />
+      <button onclick="googleSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Sign in with Google</button>
+      <br>
+      <button onclick="faceBookSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        Sign in with Facebook</button>
       <br>
       <form id="login-form">
         <div class="input-field">
@@ -171,15 +171,16 @@
       <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
     <div class="modal-content">
-      <a href="" class="navbar-brand py-1"
-              ><img
-                src="./img/Talk-to-doctor-logo2.png"
-                height="40px"
-                alt="Talk to a  Doctor logo"
-                class="img-logo"
-            /></a>
-      <h4>Sign up</h4><br />
       
+      <h5>Sign up</h5><br />
+      <button onclick="googleSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Sign up with Google</button>
+      <br>    
+      <button onclick="faceBookSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        Sign up with Facebook</button>
+      <br>      
       <form id="signup-form">
         <!-- <div class="input-field">
           <label for="signup-username">Username</label>

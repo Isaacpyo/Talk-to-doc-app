@@ -57,6 +57,28 @@ loginForm.addEventListener("submit", (e) => {
 });
 
 //google authe
+googleSignUp = () => {
+  // Using a redirect.
+  firebase
+    .auth()
+    .getRedirectResult()
+    .then(function (result) {
+      if (result.credential) {
+        // This gives you a Google Access Token.
+        var token = result.credential.accessToken;
+        M.Modal.getInstance(modal).close();
+        signupForm.reset();
+      }
+      var user = result.user;
+    });
+
+  // Start a sign in process for an unauthenticated user.
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope("profile");
+  provider.addScope("email");
+  firebase.auth().signInWithRedirect(provider);
+};
+
 googleSignIn = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope("profile");
@@ -65,7 +87,43 @@ googleSignIn = () => {
     .auth()
     .signInWithPopup(provider)
     .then(function (result) {
+      M.Modal.getInstance(modal).close();
+      loginForm.reset();
       // This gives you a Google Access Token.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+    });
+};
+
+//facebook authe
+faceBookSignUp = () => {
+  // Sign in using a redirect.
+  firebase
+    .auth()
+    .getRedirectResult()
+    .then(function (result) {
+      if (result.credential) {
+        // This gives you a Google Access Token.
+        var token = result.credential.accessToken;
+      }
+      var user = result.user;
+    });
+  // Start a sign in process for an unauthenticated user.
+  var provider = new firebase.auth.FacebookAuthProvider();
+  provider.addScope("user_birthday");
+  firebase.auth().signInWithRedirect(provider);
+};
+
+faceBookSignIn = () => {
+  // Sign in using a popup.
+  var provider = new firebase.auth.FacebookAuthProvider();
+  provider.addScope("user_birthday");
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function (result) {
+      // This gives you a Facebook Access Token.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;

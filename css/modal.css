@@ -172,7 +172,7 @@ textarea {
 }
 
 .modal .modal-content {
-  padding: 24px;
+  padding: 24px 24px 0 24px;
 }
 
 .modal {
@@ -191,7 +191,7 @@ textarea {
   margin-top: 30px;
 }
 .modal {
-  height: 75%;
+  height: 85%;
 }
 
 .modal-overlay {
@@ -294,6 +294,12 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
 @media only screen and (max-width: 540px) {
   .modal {
     width: 80%;
+  }
+  .btn,
+  .btn-large,
+  .btn-small,
+  .btn-flat {
+    font-size: 12px;
   }
 }
 
