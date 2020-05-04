@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./fonts/icomoon/style.css" />
     <link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css" />
     <link rel="stylesheet" href="./fonts/flaticon-3/flaticon3.css" />
+    
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
@@ -32,9 +33,10 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/carousel.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
     <title>Talk to a Doctor</title>
   </head>
-  <body>
+  <body  class="grey lighten-3">
     <header class="header">
       <!-- Navbar-->
       <nav
@@ -50,25 +52,7 @@
                 alt="Talk to a  Doctor logo"
                 class="img-logo"
             /></a>
-            <form action="#" id="search" class="form-inline d-none d-sm-flex">
-              <div
-                class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3"
-              >
-                <label for="search_search" class="label-absolute"
-                  ><i class="fa fa-search"></i
-                  ><span class="sr-only">What are you looking for?</span></label
-                >
-                <input
-                  id="search_search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                />
-                <button type="reset" class="btn btn-reset btn-sm">
-                  <i class="fa-times fas"></i>
-                </button>
-              </div>
-            </form>
+           
           </div>
           <button
             type="button"
@@ -115,10 +99,19 @@
               <li class="nav-item">
                 <a href="contact.html" class="nav-link">How it works</a>
               </li>
+              <li class="nav-item  logged-in">
+                 <button type="button"  class="btn btn-primary3" id="logout">Logout</button>
+             </li>
               <li>
                                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary nav-item" data-target="modal-signup">
-                    Sign up/Sign in
+                  <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-login">
+                    Sign in
+                  </button>
+              </li>
+              <li>
+                                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-signup">
+                    Sign up
                   </button>
               </li>
               <li
@@ -132,26 +125,86 @@
           </div>
         </div>
       </nav>
-        <!-- SIGN UP MODAL -->
-        <div id="modal-signup" class="modal">
-          <div class="modal-content">
-            <h4>Sign up</h4><br />
-            <form id="signup-form">
-              <div class="input-field">
-                <input type="email" id="signup-email" required />
-                <label for="signup-email">Email address</label>
-              </div>
-              <div class="input-field">
-                <input type="password" id="signup-password" required />
-                <label for="signup-password">Choose password</label>
-              </div>
-              <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-            </form>
-          </div>
-        </div>
-     
       <!-- /Navbar -->
     </header>
+    <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <a href="" class="navbar-brand py-1"
+              ><img
+                src="./img/Talk-to-doctor-logo2.png"
+                height="40px"
+                alt="Talk to a  Doctor logo"
+                class="img-logo"
+            /></a>
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+           <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" required />
+         
+        </div>
+        <div class="input-field">
+           <label for="login-password">Password</label>
+          <input type="password" id="login-password"  required />
+         
+        </div>
+        <div class="donthave2">
+           <a href="#">
+             <h6 style="padding-right: 22px;"><strong>Forgot your password</strong></h6>
+           </a>
+         
+         </div>
+         
+        
+        <button style="color: white;" class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+       <br />
+      <div class="donthave">
+           <h6>Dont't have an account?</h6>
+         <a href="#"> <h6 style="color: #0065d1;"><strong> Sign up</strong></h6><br /></a>
+         </div>
+    </div>
+  </div>
+      <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <a href="" class="navbar-brand py-1"
+              ><img
+                src="./img/Talk-to-doctor-logo2.png"
+                height="40px"
+                alt="Talk to a  Doctor logo"
+                class="img-logo"
+            /></a>
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <!-- <div class="input-field">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username"  required />
+          
+        </div> -->
+        <div class="input-field">
+          <label for="signup-email">Email address</label>
+          <input type="email" id="signup-email"  required />
+          
+        </div>
+        
+        <div class="input-field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password"  required />
+          
+        </div>
+        <button style="color: white;" class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+      <br />
+      <div class="donthave">
+           <h6>Have an account?</h6>
+         <a href="#"> <h6 style="color: #0065d1;"><strong> Sign in</strong></h6><br /></a>
+         </div>
+    </div>
+  </div>
+
+  
     <!-- landing page  -->
     <div
       id="carouselExampleSlidesOnly"
@@ -191,7 +244,7 @@
                 from our pool of certified professionals.</p>
               </div>
             </div>
-             <!-- <form action="#" class="filter-search">
+             <form action="#" class="filter-search">
                             <div class="category-search">
                                 <h5>Search Category</h5>
                                 <select class="ca-search">
@@ -209,7 +262,7 @@
                                 </select>
                             </div>
                             <button type="submit">Search Now</button>
-             </form> -->
+             </form>
           </div>
         </div>
       </div>
@@ -295,6 +348,12 @@
         </div>
       </div>
     </div>
+    <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+      
+    </ul>
+  </div>
 
     <!-- why us -->
     <div class="site-section why-us">
@@ -682,6 +741,34 @@
     </div>
     
      <!-- blog -->
+     <!-- fb chat plugin -->
+      <div>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v6.0'
+            });
+          };
+
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="112171880483237"
+    logged_in_greeting="Hi! How can we help you? Chat now and we'll answer all your questions."
+    logged_out_greeting="Hi! How can we help you? Chat now and we'll answer all your questions.">
+        </div>
+      </div>
      
 
     <!-- Footer Area Starts -->
@@ -796,8 +883,34 @@
         </div>
       </div>
     </footer>
-
     <!-- Footer Area End -->
+
+    <!-- All the scripts -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyChniyeaKvKfxRyVZLpUsOGeh-SDckipNw",
+        authDomain: "talk-to-a-doctor-e467a.firebaseapp.com",
+        databaseURL: "https://talk-to-a-doctor-e467a.firebaseio.com",
+        projectId: "talk-to-a-doctor-e467a",
+        appId: "1:178431003719:web:bda70cbdc712b934b5f562",
+        measurementId: "G-D4MJ1HZDEF"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      //make auth and firestore reference
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      //firestore update
+      // db.settings({timestampsInSnapshots: true});
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       
@@ -809,7 +922,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <script src="./js/jquery-3.3.1.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/materialize.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <!-- <script src="./js/jquery-migrate-3.0.1.min.js"></script> -->
     <script src="./js/jquery-ui.js"></script>
@@ -831,6 +944,7 @@
 
     <script src="./js/jquery.nice-select.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/auth.js"></script>
     <!-- <script src="./js/aos.js"></script> -->
     <script src="./js/app.js"></script>
   </body>
