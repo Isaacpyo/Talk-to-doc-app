@@ -1,5 +1,47 @@
 // DOM elements
 const guideList = document.querySelector(".guides");
+const loggedOutLinks = document.querySelectorAll(".logged-out");
+const loggedInLinks = document.querySelectorAll(".logged-in");
+const signOutLinks = document.querySelectorAll(".thank-you ");
+const thankYouLinks = document.querySelectorAll(".signed-up");
+const showNumber = document.querySelector(".show-number");
+const hideNumber = document.querySelector(".hide-number");
+
+const setupUI = (user) => {
+  if (user) {
+    // toggle user UI elements
+    loggedInLinks.forEach((item) => (item.style.display = "block"));
+    loggedOutLinks.forEach((item) => (item.style.display = "none"));
+  } else {
+    // toggle user elements
+    loggedInLinks.forEach((item) => (item.style.display = "none"));
+    loggedOutLinks.forEach((item) => (item.style.display = "block"));
+  }
+};
+
+const sigUpUI = (user) => {
+  if (user) {
+    // toggle user UI elements
+    signOutLinks.forEach((item) => (item.style.display = "block"));
+    thankYouLinks.forEach((item) => (item.style.display = "none"));
+  } else {
+    // toggle user elements
+    signOutLinks.forEach((item) => (item.style.display = "none"));
+    thankYouLinks.forEach((item) => (item.style.display = "block"));
+  }
+};
+//number hide
+const hideShowNumber = (user) => {
+  if (user) {
+    // toggle user UI elements
+    showNumber.forEach((item) => (item.style.display = "block"));
+    hideNumber.forEach((item) => (item.style.display = "none"));
+  } else {
+    // toggle user elements
+    showNumber.forEach((item) => (item.style.display = "none"));
+    hideNumber.forEach((item) => (item.style.display = "block"));
+  }
+};
 
 // setup guides
 const setupGuides = (data) => {

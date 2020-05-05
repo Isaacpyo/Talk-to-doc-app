@@ -5,8 +5,15 @@ auth.onAuthStateChanged((user) => {
       .get()
       .then((snapshot) => {
         setupGuides(snapshot.docs);
+        //UI element call
+        setupUI(user);
+        sigUpUI(user);
+        hideShowNumber(user);
       });
   } else {
+    setupUI();
+    sigUpUI();
+    hideShowNumber();
     setupGuides([]);
   }
 });

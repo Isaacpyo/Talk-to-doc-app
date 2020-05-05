@@ -274,9 +274,33 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .modal {
     width: 40%;
+  }
+  .btn-primary3 {
+    color: #ff0000;
+    background-color: #ffffff;
+    border-color: #007bff;
+    margin: 4px 0px;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin: 4px 0px;
+  }
+  .btn-primary2 {
+    color: #007bff;
+    background-color: #ffffff;
+    border-color: #007bff;
+    margin: 7px 0px;
+  }
+  .btn,
+  .btn-large,
+  .btn-small,
+  .btn-flat {
+    font-size: 15px;
   }
 }
 

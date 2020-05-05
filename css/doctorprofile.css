@@ -131,3 +131,43 @@
 .job-single-content .jobs-tab {
   float: left;
 }
+.download-area {
+  background: #ebe9e9;
+  margin-top: 0px;
+}
+
+li {
+  display: list-item;
+  list-style: none;
+}
+
+.job-text {
+  margin-top: 25px;
+}
+
+.arrange-items {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+@media (max-width: 404px) {
+  .h5,
+  h5 {
+    font-size: 0.9rem;
+  }
+  .mt-4 {
+    padding-left: 0.1rem !important;
+  }
+}
+
+@media (max-width: 382px) {
+  .opens {
+    padding: 7px 20px;
+    background: #007bff;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+    margin: 20px 0 0 0px;
+  }
+}
