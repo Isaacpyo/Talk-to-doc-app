@@ -30,18 +30,6 @@ const sigUpUI = (user) => {
     thankYouLinks.forEach((item) => (item.style.display = "block"));
   }
 };
-//number hide
-const hideShowNumber = (user) => {
-  if (user) {
-    // toggle user UI elements
-    showNumber.forEach((item) => (item.style.display = "block"));
-    hideNumber.forEach((item) => (item.style.display = "none"));
-  } else {
-    // toggle user elements
-    showNumber.forEach((item) => (item.style.display = "none"));
-    hideNumber.forEach((item) => (item.style.display = "block"));
-  }
-};
 
 // setup guides
 const setupGuides = (data) => {

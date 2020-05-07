@@ -1,0 +1,5 @@
+.site-blocks-cover,
+.site-blocks-cover > .container > .row {
+  min-height: 400px;
+  height: calc(50vh);
+}

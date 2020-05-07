@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="/talktoadoctor">
     <link
       rel="shortcut icon"
       type="image/png"
@@ -20,20 +21,31 @@
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.min.css">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+    
     <link rel="stylesheet" href="./fonts/icomoon/style.css" />
     <link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css" />
     <link rel="stylesheet" href="./fonts/flaticon-3/flaticon3.css" />
+    
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
     
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/carousel.css" />
     <link rel="stylesheet" href="./css/profile-list.css" />
+    <link rel="stylesheet" href="./css/blog.css" />
+
+    
     <title>Talk to a Doctor</title>
   </head>
-  <body>
-    <header class="header">
+  <body  class="grey lighten-3">
+    <header class="header">s
       <!-- Navbar-->
       <nav
         class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white"
@@ -41,33 +53,16 @@
         <div class="container-fluid">
           <!-- logo  -->
           <div class="d-flex align-items-center">
-            <a href="index.html" class="navbar-brand py-1"
+            <a href="index" class="navbar-brand py-1"
               ><img
                 src="./img/Talk-to-doctor-logo2.png"
                 height="40px"
                 alt="Talk to a  Doctor logo"
                 class="img-logo"
             /></a>
-            <form action="#" id="search" class="form-inline d-none d-sm-flex">
-              <div
-                class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3"
-              >
-                <label for="search_search" class="label-absolute"
-                  ><i class="fa fa-search"></i
-                  ><span class="sr-only">What are you looking for?</span></label
-                >
-                <input
-                  id="search_search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                />
-                <button type="reset" class="btn btn-reset btn-sm">
-                  <i class="fa-times fas"></i>
-                </button>
-              </div>
-            </form>
+           
           </div>
+          <!-- nav-button -->
           <button
             type="button"
             data-toggle="collapse"
@@ -81,215 +76,266 @@
           </button>
           <!-- Navbar Collapse -->
           <div id="navbarCollapse" class="collapse navbar-collapse">
-            <form
-              action="#"
-              id="searchcollapsed"
-              class="form-inline mt-4 mb-2 d-sm-none"
-            >
-              <div
-                class="input-label-absolute input-label-absolute-left input-reset w-100"
-              >
-                <label for="searchcollapsed_search" class="label-absolute"
-                  ><i class="fa fa-search"></i
-                  ><span class="sr-only">What are you looking for?</span></label
-                >
-                <input
-                  id="searchcollapsed_search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                />
-                <button type="reset" class="btn btn-reset btn-sm">
-                  <i class="fa-times fas"> </i>
-                </button>
-              </div>
-            </form>
+            
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  id="homeDropdownMenuLink"
-                  href="index.html"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  class="nav-link dropdown-toggle active"
-                >
-                  Why Talk to a Doctor?</a
-                >
-                <div
-                  aria-labelledby="homeDropdownMenuLink"
-                  class="dropdown-menu"
-                  style="display: none; transform: translateY(30px);"
-                >
-                  <a href="index.html" class="dropdown-item">Rooms</a
-                  ><a href="index-2.html" class="dropdown-item">Restaurants</a
-                  ><a href="index-3.html" class="dropdown-item">Travel</a
-                  ><a href="index-4.html" class="dropdown-item"
-                    >Real Estate
-                    <span class="badge badge-info-light ml-1 mt-n1"
-                      >New</span
-                    ></a
-                  >
-                </div>
+             
+              <li class="nav-item js-scroll-trigger">
+                <a href="whyus" class="nav-link why-talk">Why Talk to a Doctor</a>
               </li>
               <!-- Megamenu-->
-
               <!-- /Megamenu end-->
-              <li class="nav-item">
-                <a href="contact.html" class="nav-link">How it works</a>
+              <li class="nav-item js-scroll-trigger">
+                <a href="How-it-works" class="nav-link">How it works</a>
               </li>
-              <li class="nav-item">
-                <a href="contact.html" class="nav-link">Who we serve</a>
+              <!-- log out -->
+              <li class="nav-item js-scroll-trigger logged-in" style="display: none;">
+                 <button type="button"  class="btn btn-primary3" id="logout">Logout</button>
+             </li>
+             <!-- sign in -->
+              <li class="js-scroll-trigger logged-out" style="display: none;">
+              
+                  <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-login">
+                    
+                    Sign in
+                  </button>
               </li>
-              <!-- <li class="nav-item dropdown">
-                <a
-                  id="docsDropdownMenuLink"
-                  href="index.html"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  class="nav-link dropdown-toggle"
-                >
-                  Docs</a
-                >
-                <div
-                  aria-labelledby="docsDropdownMenuLink"
-                  class="dropdown-menu dropdown-menu-right"
-                  style="display: none; transform: translateY(30px);"
-                >
-                  <h6 class="dropdown-header font-weight-normal">
-                    Documentation
-                  </h6>
-                  <a href="docs/docs-introduction.html" class="dropdown-item"
-                    >Introduction </a
-                  ><a
-                    href="docs/docs-directory-structure.html"
-                    class="dropdown-item"
-                    >Directory structure </a
-                  ><a href="docs/docs-gulp.html" class="dropdown-item">Gulp </a
-                  ><a
-                    href="docs/docs-customizing-css.html"
-                    class="dropdown-item"
-                    >Customizing CSS </a
-                  ><a href="docs/docs-credits.html" class="dropdown-item"
-                    >Credits </a
-                  ><a href="docs/docs-changelog.html" class="dropdown-item"
-                    >Changelog
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header font-weight-normal">Components</h6>
-                  <a href="docs/components-bootstrap.html" class="dropdown-item"
-                    >Bootstrap </a
-                  ><a
-                    href="docs/components-directory.html"
-                    class="dropdown-item"
-                    >Theme
-                  </a>
-                </div>
-              </li> -->
-              <li class="nav-item">
-                <a href="login.html" class="nav-link">Sign in</a>
+               <!-- sign up -->
+              <li class="js-scroll-trigger logged-out" style="display: none;">
+                                
+                 <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-signup">
+                    Sign up
+                  </button>
               </li>
-              <!-- <li class="nav-item">
-                <a href="signup.html" class="nav-link">Sign up</a>
-              </li> -->
+               <!-- find doc -->
               <li
-                class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block"
+                class="js-scroll-trigger logged-in nav-item modal-trigger"
+                style="display: none;"
               >
-                <a href="user-add-0.html" class="btn btn-primary"
+                <a href="profile-listings" class="btn btn-primary"
                   >Find a Doctor</a
                 >
               </li>
+              <li class="follow-us">
+                <h5 class="footer-heading mb-4">Follow Us</h5>
+
+                <div class="iconss">
+                  <a href="#" class="pl-0 pr-3"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-twitter"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-instagram"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-linkedin"></span
+                  ></a>
+                </div>
+              </li>
+              
             </ul>
           </div>
+          <!-- userprofile -->
+          <div class="user-profile js-scroll-trigger logged-in nav-item mt-3  modal-trigger" style="display: none;">
+               <a href="#">
+                  <i class="fas fa-user-circle"></i>
+               </a>
+          </div>
+          <!-- follow us -->
+          
         </div>
       </nav>
       <!-- /Navbar -->
     </header>
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+      <div class="modal-content">
+        
+        <h5>Login</h5><br />
+        <button onclick="googleSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+          <i class="fa fa-google" aria-hidden="true"></i>
+          Sign in with Google
+          
+        </button>
+        <br>
+        <button onclick="faceBookSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          Sign in with Facebook
+        
+        </button>
+        <br>
+        <form id="login-form">
+          <div class="input-field">
+            <label for="login-email">Email Address</label>
+            
+            <input type="email" id="login-email" required />
+          
+          </div>
+          <div class="input-field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password"  required />
+          
+          </div>
+          <div class="donthave2">
+            <a href="#">
+              <h6 style="padding-right: 22px;"><strong>Forgot your password</strong></h6>
+            </a>
+          
+          </div>
+          
+          
+          <button style="color: white;" class="button btn yellow darken-2 z-depth-0">
+            <i class="loading-icon3 spinner fa fa-spinner fa-spin hide"></i>
+            <span class="btn-txt">Log in</span></button>
+        </form>
+        <br />
+        <div class="donthave">
+            <h6>Dont't have an account?</h6>
+          <a href="#"> <h6 style="color: #0065d1;"><strong> Sign up</strong></h6><br /></a>
+          </div>
+      </div>
+    </div>
+        <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal">
+      <div class="modal-content signupeffect" id="signupeffect">
+      
+      <h5>Sign up</h5><br />
+      <button onclick="googleSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Sign up with Google
+    
+      </button>
+      <br>    
+      <button onclick="faceBookSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        Sign up with Facebook
+      </button>
+      <br>      
+      <form id="signup-form">
+        <!-- <div class="input-field">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username"  required />
+          
+        </div> -->
+        <div class="input-field">
+          <label for="signup-email">Email address</label>
+          <input type="email" id="signup-email"  required />
+          
+        </div>
+        
+        <div class="input-field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password"  required />
+          
+        </div>
+        <button id="submit message" style="color: white;" class="button btn yellow darken-2 z-depth-0">
+         <i class="loading-icon6 spinner fa fa-spinner fa-spin hide"></i>
+          <span  class="btn-txt2">Sign Up</span></button>
+      </form>
+      <br />
+      <div class="donthave">
+           <h6>Have an account?</h6>
+         <a href="#"> <h6 style="color: #0065d1;"><strong> Sign in</strong></h6><br /></a>
+         </div>
+         
+        
+     
+    </div>
+    
+     
+  </div>
 
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(./img/blog2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-md-10">
-            <h1 class="mb-2">Our Blog</h1>
+  <!-- landing page background-->
+
+  <!-- landing page background-->
+
+      <!-- landing page  -->
+      <div class="site-wrap">
+      
+
+      <div style="height: 35px;"></div>
+
+      <div
+        class="site-blocks-cover overlay"
+        style="background-image: url('./img/blog2.jpg');"
+        data-aos="fade"
+        data-stellar-background-ratio="0.5"
+      >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-10 text-center">
+              <div class="row align-items-center justify-content-center text-center">
+              </div>
+            <h1>Our Blog </h1>
+            
+          </div>
+          
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
+        <!-- blog -->
+      <div class="site-section bg-light">
+        <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center">
+            <div class="site-section-title">
+             
+            </div>
+            
+          </div>
+          </div>
+           <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up"
+              data-aos-delay="100">
+            <a href="#"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
+            <div class="p-4 bg-white2">
+              <span class="d-block text-secondary small text-uppercase">May 20th, 2020</span>
+              <h2 class="h5 text-black mb-3"><a href="#">Palliative Care Helped Family Face 'The Awful, Awful Truth'</a></h2>
+              <p>Elizabeth and Robert Mar died of COVID-19 within a day of each other. They would have celebrated 50 years of marriage in August.</p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up"
+              data-aos-delay="200" >
             <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
+            <div class="p-4 bg-white2">
+              <span class="d-block text-secondary small text-uppercase">June 20th, 2020</span>
+              <h2 class="h5 text-black mb-3"><a href="#">Focus: Lost On The Frontline</a></h2>
+              <p>Nigeria’s health care workers are dying. In some states, medical staff account for as many as 20% of known coronavirus cases. .</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up"
+              data-aos-delay="300" >
+            <a href="#"><img src="images/img_7.jpg" alt="Image" class="img-fluid"></a>
+            <div class="p-4 bg-white2">
+              <span class="d-block text-secondary small text-uppercase">July 20th, 2020</span>
+              <h2 class="h5 text-black mb-3"><a href="#">How Does The Gig Economy Translate To Physician Work?</a></h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_5.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-6" data-aos="fade-up" data-aos-delay="200">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-7" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
+          
 
         </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-md-12 text-center">
-            <div class="site-pagination">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <span>...</span>
-              <a href="#">10</a>
-            </div>
-          </div>  
+        <div class="row mt-5 justify-content-center tex-center">
+          <div class="col-md-4">
+            <a href="blog" class="btn btn-block btn-outline-primary btn-md px-5"
+              >Read more</a
+            >
+          </div>
         </div>
-       
+
       </div>
     </div>
-  
+   
+    <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+      
+    </ul>
+  </div>
+
 
     <!-- Download Area Starts -->
     <section class="download-area section-padding">
@@ -337,6 +383,39 @@
     </section>
     <!-- Download Area End -->
 
+
+    
+     <!-- blog -->
+     <!-- fb chat plugin -->
+      <!-- <div>
+       
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v6.0'
+            });
+          };
+
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+       
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="112171880483237"
+    logged_in_greeting="Hi! How can we help you? Chat now and we'll answer all your questions."
+    logged_out_greeting="Hi! How can we help you? Chat now and we'll answer all your questions.">
+        </div>
+      </div> -->
+     
+
     <!-- Footer Area Starts -->
     <footer class="site-footer">
       <div class="container">
@@ -346,11 +425,11 @@
               <h5 class="footer-heading mb-4">About</h5>
               <p style="color: rgb(189, 189, 189);">
               <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
+                  <li><a href="How-it-works">About Us</a></li>
                   <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="Contact">Contact Us</a></li>
                   <li><a href="#">Terms</a></li>
-                  <li><a href="#">Blog</a></li>
+                  <li><a href="blog">Blog</a></li>
                   <li><a href="#">FAQs</a></li>
                 </ul></p>
             </div>
@@ -384,14 +463,15 @@
             <p style="color: rgb(189, 189, 189);">
               Sign up to our Newsletter to keep up to date with us.
             </p>
-            <form action="#" method="post">
+            <form name="contact" action="#" method="post" netlify> 
               <div class="input-group mb-3">
                 <input
                   type="text"
                   class="form-control bg-transparent"
                   placeholder="Enter Email"
+                  name="email"
                   aria-label="Enter Email"
-                  aria-describedby="button-addon2"
+                  aria-describedby="button-addon2" 
                 />
                 <div class="input-group-append">
                   <button
@@ -449,33 +529,66 @@
         </div>
       </div>
     </footer>
-
     <!-- Footer Area End -->
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="./js/jquery-ui.js"></script>
-    <script src="./js/popper.min.js"></script>
+
+    <!-- All the scripts -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyChniyeaKvKfxRyVZLpUsOGeh-SDckipNw",
+        authDomain: "talk-to-a-doctor-e467a.firebaseapp.com",
+        databaseURL: "https://talk-to-a-doctor-e467a.firebaseio.com",
+        projectId: "talk-to-a-doctor-e467a",
+        appId: "1:178431003719:web:bda70cbdc712b934b5f562",
+        measurementId: "G-D4MJ1HZDEF"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      //make auth and firestore reference
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      //firestore update
+      // db.settings({timestampsInSnapshots: true});
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+     ></script>
     <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      
       crossorigin="anonymous"
     ></script>
-
+    <!-- <script src="./js/jquery-3.3.1.min.js"></script> -->
+    <script src="./js/materialize.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/migrate-3.0.1.min.js"></script>
+    <!-- <script src="./js/jquery-ui.js"></script> -->
+    <script src="./js/popper.min.js"></script>
+    
+    
     <script src="js/typed.js"></script>
-    <script>
-            var typed = new Typed('.typed-words', {
-            strings: ["Doctors"," Hospitals"," Health-care Providers"],
-            typeSpeed: 80,
-            backSpeed: 80,
-            backDelay: 4000,
-            startDelay: 1000,
-            loop: true,
-            showCursor: true
-            });
-    </script>
 
     <script src="./js/jquery.nice-select.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/firebaseauthe.js"></script>
+    <script src="./js/stellar.min.js"></script>
+    <script src="./js/magnific-popup.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="js/location.js"></script>
     <script src="./js/app.js"></script>
+     <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIH1SejPzS65sgWb1jEksNdpGn-sD9BbA&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
   </body>
 </html>
+  

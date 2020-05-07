@@ -8,7 +8,7 @@ auth.onAuthStateChanged((user) => {
         //UI element call
         setupUI(user);
         sigUpUI(user);
-        hideShowNumber(user);
+        // hideShowNumber(user);
       });
   } else {
     setupUI();

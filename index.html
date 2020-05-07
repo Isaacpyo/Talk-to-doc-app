@@ -33,8 +33,6 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="./css/owl.carousel.min.css" /> -->
-    <link rel="stylesheet" href="./css/owl.carousel.min.css" type="text/css" />
     <link rel="stylesheet" href="./css/aos.css" />
     
     <link rel="stylesheet" href="./css/style.css" />
@@ -251,21 +249,13 @@
 
       <!-- landing page  -->
       <div class="site-wrap">
-      <!-- <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div> -->
-      <!-- .site-mobile-menu -->
+      
 
       <div style="height: 35px;"></div>
 
       <div
         class="site-blocks-cover overla"
-        style="background-image: url('./img/docpictures2.png');"
+        style="background-image: url('./img/docpictures22.jpg');"
         data-aos="fade"
         data-stellar-background-ratio="0.5"
       >
@@ -286,8 +276,8 @@
                       <div class="col-md-6 mb-3 mb-md-0">
                         <input
                           type="texts"
-                          class="mr-3 form-control2 border-0 px-4"
-                          placeholder="Doctor's category"
+                          class="mr-3 form-control2 border-0 px-4 placeopacity"
+                          placeholder="Doctor's category" required
                         />
                       </div>
                       <div class="col-md-6 mb-3 mb-md-0">
@@ -295,10 +285,12 @@
                           <span class="icon icon-room"></span>
                           <input
                             type=""
-                            class="form-control2 form-control-block search-input border-0 px-4"
+                            class="form-control2 placeopacity form-control-block search-input border-0 px-4"
                             id="autocomplete"
                             placeholder="city, state"
                             onFocus="geolocate()"
+                            
+                            required
                           />
                         </div>
                       </div>
@@ -306,11 +298,9 @@
                   </div>
                   <div class="col-md-3">
                     <a href="profile-listings">
-                      <input
-                      type="submit"
+                      <button
                       class="btn2 btn-search2 btn-primary5 btn-block"
-                      value="Search"
-                    />
+                      value="Search">SEARCH</button>
                     </a>
                   </div>
                 </div>
@@ -416,12 +406,6 @@
         </div>
       </div>
     </div>
-    <!-- GUIDE LIST -->
-  <div class="container" style="margin-top: 40px;">
-    <ul class="collapsible z-depth-0 guides" style="border: none;">
-      
-    </ul>
-  </div>
 
     <!-- why us -->
     <div class="site-section why-us">
@@ -534,8 +518,11 @@
               <h3>Create account</h3>
               <p>
                 Signing up is easy and it takes less than a minute on your
-                phone, tablet or computer. To sign up as a Patient, Click the
-                Button Below.
+                phone, tablet or computer. To sign up as a Patient, Click <a
+              
+                href=""  data-target="modal-signup"
+                class=" modal-trigger "
+                >here</a> to start.
               </p>
             </div>
           </div>
@@ -578,6 +565,13 @@
         </div>
       </div>
     </div>
+
+    <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+      
+    </ul>
+  </div>
     
 
     <!-- let get started -->
@@ -859,11 +853,11 @@
               <h5 class="footer-heading mb-4">About</h5>
               <p style="color: rgb(189, 189, 189);">
               <ul class="list-unstyled">
-                  <li><a href="How-it-works.html">About Us</a></li>
+                  <li><a href="How-it-works">About Us</a></li>
                   <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="Contact.html">Contact Us</a></li>
+                  <li><a href="Contact">Contact Us</a></li>
                   <li><a href="#">Terms</a></li>
-                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="blog">Blog</a></li>
                   <li><a href="#">FAQs</a></li>
                 </ul></p>
             </div>
@@ -897,14 +891,15 @@
             <p style="color: rgb(189, 189, 189);">
               Sign up to our Newsletter to keep up to date with us.
             </p>
-            <form action="#" method="post">
+            <form name="contact" action="#" method="post" netlify> 
               <div class="input-group mb-3">
                 <input
                   type="text"
                   class="form-control bg-transparent"
                   placeholder="Enter Email"
+                  name="email"
                   aria-label="Enter Email"
-                  aria-describedby="button-addon2"
+                  aria-describedby="button-addon2" 
                 />
                 <div class="input-group-append">
                   <button
