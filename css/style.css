@@ -1145,6 +1145,9 @@ body[data-aos-duration="800"] [data-aos] {
   .navbar-toggler {
     margin: 0 0px 0 300px;
   }
+  .site-blocks-cover h1 {
+    padding-top: 25px;
+  }
 }
 
 @media (max-width: 768px) {

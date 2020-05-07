@@ -216,14 +216,14 @@ textarea {
 }
 
 .btn-primary2 {
-  color: #007bff;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #007bff;
   border-color: #007bff;
   margin: 7px 7px;
 }
 .btn-primary3 {
-  color: #ff0000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #ff0000;
   border-color: #007bff;
   margin: 7px 7px;
 }
@@ -291,8 +291,8 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
     margin: 4px 0px;
   }
   .btn-primary2 {
-    color: #007bff;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #007bff;
     border-color: #007bff;
     margin: 7px 0px;
   }
