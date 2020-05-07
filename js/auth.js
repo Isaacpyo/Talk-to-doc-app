@@ -13,7 +13,7 @@ auth.onAuthStateChanged((user) => {
   } else {
     setupUI();
     sigUpUI();
-    hideShowNumber();
+    // hideShowNumber();
     setupGuides([]);
   }
 });

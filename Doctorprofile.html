@@ -42,33 +42,16 @@
         <div class="container-fluid">
           <!-- logo  -->
           <div class="d-flex align-items-center">
-            <a href="index.html" class="navbar-brand py-1"
+            <a href="index" class="navbar-brand py-1"
               ><img
                 src="./img/Talk-to-doctor-logo2.png"
                 height="40px"
                 alt="Talk to a  Doctor logo"
                 class="img-logo"
             /></a>
-            <form action="#" id="search" class="form-inline d-none d-sm-flex">
-              <div
-                class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3"
-              >
-                <label for="search_search" class="label-absolute"
-                  ><i class="fa fa-search"></i
-                  ><span class="sr-only">What are you looking for?</span></label
-                >
-                <input
-                  id="search_search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                />
-                <button type="reset" class="btn btn-reset btn-sm">
-                  <i class="fa-times fas"></i>
-                </button>
-              </div>
-            </form>
+           
           </div>
+          <!-- nav-button -->
           <button
             type="button"
             data-toggle="collapse"
@@ -82,86 +65,175 @@
           </button>
           <!-- Navbar Collapse -->
           <div id="navbarCollapse" class="collapse navbar-collapse">
-            <form
-              action="#"
-              id="searchcollapsed"
-              class="form-inline mt-4 mb-2 d-sm-none"
-            >
-              <div
-                class="input-label-absolute input-label-absolute-left input-reset w-100"
-              >
-                <label for="searchcollapsed_search" class="label-absolute"
-                  ><i class="fa fa-search"></i
-                  ><span class="sr-only">What are you looking for?</span></label
-                >
-                <input
-                  id="searchcollapsed_search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                />
-                <button type="reset" class="btn btn-reset btn-sm">
-                  <i class="fa-times fas"> </i>
-                </button>
-              </div>
-            </form>
+            
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  id="homeDropdownMenuLink"
-                  href="index.html"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  class="nav-link dropdown-toggle active"
-                >
-                  Why Talk to a Doctor?</a
-                >
-                <div
-                  aria-labelledby="homeDropdownMenuLink"
-                  class="dropdown-menu"
-                  style="display: none; transform: translateY(30px);"
-                >
-                  <a href="index.html" class="dropdown-item">Rooms</a
-                  ><a href="index-2.html" class="dropdown-item">Restaurants</a
-                  ><a href="index-3.html" class="dropdown-item">Travel</a
-                  ><a href="index-4.html" class="dropdown-item"
-                    >Real Estate
-                    <span class="badge badge-info-light ml-1 mt-n1"
-                      >New</span
-                    ></a
-                  >
-                </div>
+             
+              <li class="nav-item js-scroll-trigger">
+                <a href="whyus" class="nav-link why-talk">Why Talk to a Doctor</a>
               </li>
               <!-- Megamenu-->
-
               <!-- /Megamenu end-->
-              <li class="nav-item">
-                <a href="contact.html" class="nav-link">How it works</a>
+              <li class="nav-item js-scroll-trigger">
+                <a href="How-it-works" class="nav-link">How it works</a>
               </li>
-              <li class="nav-item">
-                <a href="contact.html" class="nav-link">Who we serve</a>
-              </li>
+              <!-- log out -->
+              <li class="nav-item js-scroll-trigger logged-in" style="display: none;">
+                 <button type="button"  class="btn btn-primary3" id="logout">Logout</button>
+             </li>
+             <!-- sign in -->
+              <li class="js-scroll-trigger logged-out" style="display: none;">
               
-              <li class="nav-item">
-                <a href="login.html" class="nav-link">Sign in</a>
+                  <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-login">
+                    
+                    Sign in
+                  </button>
               </li>
-              <!-- <li class="nav-item">
-                <a href="signup.html" class="nav-link">Sign up</a>
-              </li> -->
+               <!-- sign up -->
+              <li class="js-scroll-trigger logged-out" style="display: none;">
+                                
+                 <button type="button" class="btn btn-primary2 nav-item modal-trigger" data-target="modal-signup">
+                    Sign up
+                  </button>
+              </li>
+               <!-- find doc -->
               <li
-                class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block"
+                class="js-scroll-trigger logged-in nav-item modal-trigger"
+                style="display: none;"
               >
-                <a href="user-add-0.html" class="btn btn-primary"
+                <a href="profile-listings.html" class="btn btn-primary"
                   >Find a Doctor</a
                 >
               </li>
+              <li class="follow-us">
+                <h5 class="footer-heading mb-4">Follow Us</h5>
+
+                <div class="iconss">
+                  <a href="#" class="pl-0 pr-3"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-twitter"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-instagram"></span
+                  ></a>
+                  <a href="#" class="pl-3 pr-3"
+                    ><span class="icon-linkedin"></span
+                  ></a>
+                </div>
+              </li>
+              
             </ul>
           </div>
+          <!-- userprofile -->
+          <div class="user-profile js-scroll-trigger logged-in nav-item mt-3  modal-trigger" style="display: none;">
+               <a href="#">
+                  <i class="fas fa-user-circle"></i>
+               </a>
+          </div>
+          <!-- follow us -->
+          
         </div>
       </nav>
       <!-- /Navbar -->
     </header>
+    <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      
+      <h5>Login</h5><br />
+      <button onclick="googleSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Sign in with Google
+        
+      </button>
+      <br>
+      <button onclick="faceBookSignIn();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        Sign in with Facebook
+       
+      </button>
+      <br>
+      <form id="login-form">
+        <div class="input-field">
+           <label for="login-email">Email Address</label>
+           
+          <input type="email" id="login-email" required />
+         
+        </div>
+        <div class="input-field">
+           <label for="login-password">Password</label>
+          <input type="password" id="login-password"  required />
+         
+        </div>
+        <div class="donthave2">
+           <a href="#">
+             <h6 style="padding-right: 22px;"><strong>Forgot your password</strong></h6>
+           </a>
+         
+         </div>
+         
+        
+        <button style="color: white;" class="button btn yellow darken-2 z-depth-0">
+          <i class="loading-icon3 spinner fa fa-spinner fa-spin hide"></i>
+          <span class="btn-txt">Log in</span></button>
+      </form>
+       <br />
+      <div class="donthave">
+          <h6>Dont't have an account?</h6>
+         <a href="#"> <h6 style="color: #0065d1;"><strong> Sign up</strong></h6><br /></a>
+         </div>
+    </div>
+  </div>
+      <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content signupeffect" id="signupeffect">
+      
+      <h5>Sign up</h5><br />
+      <button onclick="googleSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        Sign up with Google
+    
+      </button>
+      <br>    
+      <button onclick="faceBookSignUp();" style="color: white;" class="btn yellow darken-2 z-depth-0">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        Sign up with Facebook
+      </button>
+      <br>      
+      <form id="signup-form">
+        <!-- <div class="input-field">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username"  required />
+          
+        </div> -->
+        <div class="input-field">
+          <label for="signup-email">Email address</label>
+          <input type="email" id="signup-email"  required />
+          
+        </div>
+        
+        <div class="input-field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password"  required />
+          
+        </div>
+        <button id="submit message" style="color: white;" class="button btn yellow darken-2 z-depth-0">
+         <i class="loading-icon6 spinner fa fa-spinner fa-spin hide"></i>
+          <span  class="btn-txt2">Sign Up</span></button>
+      </form>
+      <br />
+      <div class="donthave">
+           <h6>Have an account?</h6>
+         <a href="#"> <h6 style="color: #0065d1;"><strong> Sign in</strong></h6><br /></a>
+         </div>
+         
+        
+     
+    </div>
+    
+     
+  </div>
 
     <!-- Job Single Content Starts -->
     <div class="col-md-12 text-center border-primary" style="padding-top: 110px; margin-bottom: 30px;">
