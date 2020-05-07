@@ -3,3 +3,7 @@
   min-height: 400px;
   height: calc(50vh);
 }
+
+.open {
+  background-color: transparent;
+}

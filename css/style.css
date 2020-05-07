@@ -1188,6 +1188,12 @@ body[data-aos-duration="800"] [data-aos] {
   .site-section {
     padding: 7em 0;
   }
+  .download-area {
+    margin-top: -600px;
+  }
+  .form-shift-top {
+    margin-top: -180px;
+  }
 }
 
 @media (max-width: 710px) {
